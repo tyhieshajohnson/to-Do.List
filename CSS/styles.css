@@ -1,0 +1,60 @@
+/* Navigation Bar */
+.navbar {
+    overflow: hidden;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a.active {
+    background-color: red;
+    color: white;
+}
+
+.navbar .icon {
+    display: none;
+}
+
+/* To-Do List Container */
+
+.container {
+    max-width: 400px;
+    height: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 7px;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+body {
+    background-color: black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: red;
+}
+
+p {
+    color: black;
+}
+
+input {
+    border-radius: 7px;
+}
+
+button {
+    border-radius: 7px;
+    background-color: red;
+    color: white;
+}
