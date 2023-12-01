@@ -81,15 +81,12 @@ const addItemButton = document.getElementById("myAddItemButton");
 // Adds a click event listener to the sort button
 function mySortTasks() {
     isSorted = !isSorted;
-    myToDoList.sort((a, b) => {
-        if (isSorted) {
-            return a.name.localeCompare(b.name); // Sort alphabetically
-        } else {
-            return b.name.localeCompare(a.name); // Sort reverse alphabetically
-        }
-    });
-    renderList(); // Re-render the sorted list after sorting
-    // NOT FUNCTIONING :(
+    if (isSorted) {
+        myToDoList.sort((a, b) => (a.name > b.name ? 1 : -1)); // Sort alphabetically
+    } else {
+        myToDoList.sort((a, b) => (a.name < b.name ? 1 : -1)); // Reverse alphabetical order
+    }
+    renderList(); // Re-render the list after sorting
 }
 
 let sortBtn = document.getElementById('mySortButton');
