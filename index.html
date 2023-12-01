@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar" id="navbar">
+        <a href="#" class="active">Ty's To-Do</a>
+    </div>
+    <!-- To Do List -->
+    <div class="container">
+        <h1>To-Do List</h1>
+        <p>Manage Your Life From Anywhere</p>
+        <div>
+            <a href=""><button onclick="sortItems()" id="sortButton">Sort</button></a>
+            <input type="text" id="taskName">
+            <a href=""><button onclick="addItem()" id="addItem">Add Task</button></a>
+        </div>
+        <ul id="toDoList">
+        </ul>
+    </div>
+    <script src="/JS/script.js"></script>
+</body>
+</html>
