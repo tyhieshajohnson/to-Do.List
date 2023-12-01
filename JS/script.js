@@ -73,11 +73,14 @@ function myAddItem() {
 
         function mySortTasks() {
             isSorted = !isSorted;
-            if (isSorted) {
-                myToDoList.sort((a, b) => (a.name > b.name ? 1 : -1)); // Sort alphabetically
-            } else {
-                myToDoList.sort((a, b) => (a.name < b.name ? 1 : -1)); //  reverse alphabetical order
-            }
+            myToDoList.sort((a, b) => {
+                if (isSorted) {
+                    return a.name.localeCompare(b.name); // Sort alphabetically
+                } else {
+                    return b.name.localeCompare(a.name); // Sort reverse alphabetically
+                }
+            });
+            renderList(); // Re-render the sorted list after sorting
             // NOT FUNCTIONING :(
         }
 
