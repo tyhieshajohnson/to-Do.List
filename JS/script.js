@@ -66,24 +66,6 @@ function myAddItem() {
             completed: false,
         };
 
-        // Adds a click event listener to the sort button
-        let sortBtn = document.getElementById('mySortButton');
-        sortBtn.addEventListener('click', mySortTasks);
-        let isSorted = false;
-
-        function mySortTasks() {
-            isSorted = !isSorted;
-            myToDoList.sort((a, b) => {
-                if (isSorted) {
-                    return a.name.localeCompare(b.name); // Sort alphabetically
-                } else {
-                    return b.name.localeCompare(a.name); // Sort reverse alphabetically
-                }
-            });
-            renderList(); // Re-render the sorted list after sorting
-            // NOT FUNCTIONING :(
-        }
-
         // Adds the new item to the to-do list, saves to local storage, and re-renders the list
         myToDoList.push(newItem);
         mySaveTasksToLocalStorage();
@@ -95,6 +77,21 @@ function myAddItem() {
 }
 
 const addItemButton = document.getElementById("myAddItemButton");
+
+// Adds a click event listener to the sort button
+function mySortTasks() {
+    isSorted = !isSorted;
+    if (isSorted) {
+        myToDoList.sort((a, b) => (a.name > b.name ? 1 : -1)); // Sort alphabetically
+    } else {
+        myToDoList.sort((a, b) => (a.name < b.name ? 1 : -1)); // Reverse alphabetical order
+    }
+    renderList(); // Re-render the list after sorting
+}
+
+let sortBtn = document.getElementById('mySortButton');
+sortBtn.addEventListener('click', mySortTasks);
+let isSorted = false;
 
 // Add an event listener for the "click" event
 addItemButton.addEventListener("click", myAddItem);
