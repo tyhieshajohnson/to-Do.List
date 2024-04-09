@@ -129,3 +129,30 @@ window.addEventListener("load", () => {
     myToDoList = storedTasks ? JSON.parse(storedTasks) : [];
     renderList();
 });
+
+
+// Initialize FullCalendar
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth', // Display month view initially
+    events: getCalendarEvents() // Function to fetch calendar events
+  });
+  calendar.render(); // Render the calendar
+});
+
+// Function to fetch calendar events (dummy data for demonstration)
+function getCalendarEvents() {
+  return [
+    {
+      title: 'Meeting',
+      start: '2024-04-09T10:00:00',
+      end: '2024-04-09T12:00:00'
+    },
+    {
+      title: 'Appointment',
+      start: '2024-04-12T14:00:00',
+      end: '2024-04-12T15:00:00'
+    }
+  ];
+}

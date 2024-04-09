@@ -1,28 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/styles.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.9.0/main.min.css"
+      rel="stylesheet"
+    />
+    <title>Home Page</title>
+  </head>
+  <body>
     <!-- Navigation Bar -->
     <div class="navbar" id="myNavbar">
-        <a href="#" class="active">Ty's To-Do</a>
+      <a href="#" class="active">What To Do?</a>
     </div>
     <!-- To Do List -->
     <div class="container">
-        <h1>To-Do List</h1>
-        <p>Manage Your Life From Anywhere</p>
-        <div>
-            <a href=""><button id="mySortButton">Sort</button></a>
-            <input type="text" id="myTaskName">
-            <a href=""><button id="myAddItemButton">Add Task</button></a>
-        </div>
-        <ul id="myToDoList">
-        </ul>
+      <h1>To-Do List</h1>
+      <p>Manage Your Life From Anywhere</p>
+      <div>
+        <a href=""><button id="mySortButton">Sort</button></a>
+        <input type="text" id="myTaskName" />
+        <a href=""><button id="myAddItemButton">Add Task</button></a>
+      </div>
+      <ul id="myToDoList" style="color: white"></ul>
     </div>
+
+    <!-- FullCalendar container -->
+    <div id="calendar"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.9.0/main.min.js"></script>
     <script src="/JS/script.js"></script>
-</body>
+  </body>
 </html>
+
+<style scoped>
+  /* Navigation Bar */
+  .navbar {
+    overflow: hidden;
+    background-color: white;
+    border-radius: 7px;
+    color: black;
+  }
+
+  .navbar a {
+    float: left;
+    display: block;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .navbar a.active {
+    background-color: red;
+    color: white;
+  }
+
+  .navbar .icon {
+    display: none;
+  }
+
+  /* To-Do List Container */
+
+  .container {
+    max-width: 400px;
+    height: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 24px;
+    justify-content: center;
+    margin-top: 15%;
+    box-shadow: 0 0 50px rgb(11, 9, 9);
+    animation: glow 2s infinite alternate;
+  }
+
+  body {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+
+  input {
+    border-radius: 7px;
+  }
+
+  button {
+    border-radius: 7px;
+    background-color: red;
+    color: white;
+  }
+</style>
